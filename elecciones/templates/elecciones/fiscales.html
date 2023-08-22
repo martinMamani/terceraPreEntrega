@@ -1,0 +1,16 @@
+{% extends 'elecciones/plantilla.html' %}
+
+{% load static %}
+
+{% block title %} Fiscales {% endblock  %}
+
+{% block titulo %} Fiscales {% endblock  %}
+
+{% block contenido_que_cambia %}
+     <h2> Listado </h2>
+     <ul>
+        {% for f in fiscales %}
+        <li>{{f.nombre}} {{f.apellido}} con dni {{f.dni}} - partido {{f.partido}}</li>
+        {% endfor %}
+    </ul>
+{% endblock  %}

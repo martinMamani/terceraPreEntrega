@@ -1,0 +1,22 @@
+{% extends 'elecciones/plantilla.html' %}
+
+{% load static %}
+
+{% block title %} Agregar Fiscal {% endblock  %}
+
+{% block titulo %} Este es un formulario para cargar fiscales{% endblock  %}
+
+{% block contenido_que_cambia %}
+     <h2> Formulario </h2>
+     
+     <form action="{% url 'fiscalFormulario' %}" method="post"> {% csrf_token %}
+          {% comment %} {{formulario.as_p}} {% endcomment %}
+          <table>
+            {{formulario.as_table}}
+        </table>
+        <input type="submit" value="guardar fiscal">
+
+     </form>
+
+     <h3>{{mensaje}}</h3>
+{% endblock  %}

@@ -1,0 +1,16 @@
+{% extends 'elecciones/plantilla.html' %}
+
+{% load static %}
+
+{% block title %} Votantes {% endblock  %}
+
+{% block titulo %} Votantes {% endblock  %}
+
+{% block contenido_que_cambia %}
+     <h2> Listado </h2>
+     <ul>
+        {% for v in votantes %}
+        <li>{{v.nombre}} {{v.apellido}} con dni : {{v.dni}}</li>
+        {% endfor %}
+    </ul>
+{% endblock  %}

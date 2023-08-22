@@ -1,0 +1,22 @@
+{% extends 'elecciones/plantilla.html' %}
+
+{% load static %}
+
+{% block title %} Agregar Lista {% endblock  %}
+
+{% block titulo %} Este es un formulario para cargar listas{% endblock  %}
+
+{% block contenido_que_cambia %}
+     <h2> Formulario </h2>
+     
+     <form action="{% url 'listaFormulario' %}" method="post"> {% csrf_token %}
+          {% comment %} {{formulario.as_p}} {% endcomment %}
+          <table>
+            {{formulario.as_table}}
+        </table>
+        <input type="submit" value="guardar lista">
+
+     </form>
+
+     <h3>{{mensaje}}</h3>
+{% endblock  %}

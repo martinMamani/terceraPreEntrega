@@ -1,0 +1,16 @@
+{% extends 'elecciones/plantilla.html' %}
+
+{% load static %}
+
+{% block title %} Mesas {% endblock  %}
+
+{% block titulo %} Mesas {% endblock  %}
+
+{% block contenido_que_cambia %}
+     <h2> Listado </h2>
+     <ul>
+        {% for m in mesas %}
+        <li>Mesa: {{m.nombre}}</li>
+        {% endfor %}
+    </ul>
+{% endblock  %}
