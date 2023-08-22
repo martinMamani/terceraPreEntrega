@@ -1,0 +1,21 @@
+{% extends 'elecciones/plantilla.html' %}
+
+{% load static %}
+
+{% block title %} Resultado Lista {% endblock  %}
+
+{% block titulo %} Resultado de la busqueda de listas {% endblock  %}
+
+{% block contenido_que_cambia %}
+
+{% if nombresListas %}
+<h2> Resultados </h2>
+<ul>
+    {% for n in nombresListas %}
+    <li>{{n.nombre}} - {{n.numero}}</li>
+    {% endfor %}
+</ul>
+{% else %}
+ <h2> No se encontraron resultados </h2>
+{% endif %}
+{% endblock  %}

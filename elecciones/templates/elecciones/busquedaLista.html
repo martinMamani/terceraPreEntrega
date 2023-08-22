@@ -1,0 +1,24 @@
+{% extends 'elecciones/plantilla.html' %}
+
+{% load static %}
+
+{% block title %} Busqueda de Listas {% endblock  %}
+
+{% block titulo %} Buscar Listas {% endblock  %}
+
+{% block contenido_que_cambia %}
+
+{% if mensaje %}
+<h3> No se encontraron resultados. </h3>
+<a class="btn btn-info" href="{% url 'busquedaLista' %}">Volver</a>
+{% else %}
+
+<h2> Ingrese su lista a buscar: </h2>
+<form action="{% url 'buscarL' %}" method="get">
+   <input type="text" name="nombre" id="nombre" placeholder="nombre lista">
+   <input type="submit" value="buscar lista">
+</form>
+
+{% endif %}
+
+{% endblock  %}

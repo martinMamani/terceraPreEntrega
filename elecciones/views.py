@@ -91,3 +91,15 @@ def mesaFormulario(request):
         return render(request,"elecciones/mesaFormulario.html",{"mensaje":"Datos invalidos"})
     else:
         return render(request,"elecciones/mesaFormulario.html",{"formulario":formulario_mesa})
+    
+    
+def busquedaLista(request):
+    return render(request,"elecciones/busquedaLista.html")
+
+def buscarL(request):
+    nombreL = request.GET["nombre"]
+    if nombreL != "":
+        nombresListas = Lista.objects.filter(nombre__icontains = nombreL)
+        return render(request,"elecciones/resultadoBusquedaLista.html",{"nombresListas":nombresListas})
+    else:
+        return render(request,"elecciones/busquedaLista.html",{"mensaje":"sin resultados"})
