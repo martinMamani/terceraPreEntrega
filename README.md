@@ -90,6 +90,10 @@ Abro el navegador en la ruta
 
 `http://127.0.0.1:8000/elecciones/listaFormulario`
 
+- Buscar una Lista
+
+`http://127.0.0.1:8000/elecciones/busquedaLista`
+
 ## Tecnologias
 
 **Client:** HTML, CSS, Bootstrap, Jinja2
